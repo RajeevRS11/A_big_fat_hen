@@ -2,7 +2,7 @@ const methodOverride = require('method-override');
 const express = require('express');
 const app = express();
 require('dotenv').config();
-port = process.env.PORT;
+const port = process.env.PORT;
 const path = require('path');
 const { v4: uuid } = require('uuid');
 
