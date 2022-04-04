@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Comment</title>
+    <%- include('layout/link') %>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Make a new comment</h1>
+      <form action="http://localhost:3000/comments" method="post">
+        <section>
+          <label for="username">Enter username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="username"
+            required
+          />
+        </section>
+        <section>
+          <label for="comment">Comment here</label>
+          <br />
+          <textarea
+            name="comment"
+            id="comment"
+            cols=38"
+            rows="2"
+            required
+          ></textarea>
+        </section>
+        <button class="btn btn-outline-primary">Submit</button>
+        <a href="/comments">or Back to comments</a>
+      </form>
+    </div>
+  </body>
+</html>
