@@ -1,7 +1,8 @@
 const methodOverride = require('method-override');
 const express = require('express');
 const app = express();
-port = 3000;
+require('dotenv').config();
+port = process.env.PORT;
 const path = require('path');
 const { v4: uuid } = require('uuid');
 
@@ -34,11 +35,15 @@ let comments = [
   },
   {
     id: uuid(),
-    username: 'Froster',
+    username: 'Harsh',
     comment: 'Cheee big hens eat insects',
     details: 'hen has two eyes 4 eggs in their pocket.',
   },
 ];
+
+app.get('/', (req, res) => {
+  res.render('comments/index', { comments });
+});
 
 app.get('/comments', (req, res) => {
   res.render('comments/index', { comments });
